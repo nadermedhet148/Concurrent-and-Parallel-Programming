@@ -1,0 +1,14 @@
+{
+  "name": "multi-process-nodejs",
+  "version": "1.0.0",
+  "description": "A Node.js project demonstrating a multi-process example using child processes.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,4 +1,6 @@
 from multiprocessing import Lock, Process, Queue
+import os
+import sys
 
 def publish(q):
     while True:
@@ -33,7 +35,22 @@ def run_processes():
     p.join()
     p2.join()
 
+
+
+def run_external_file(external_file):
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        full_path = os.path.join(current_dir, external_file)
+        if os.path.exists(full_path):
+            # process = Process(target=os.system, args=(f'/usr/bin/python3 {full_path}',))
+            process = Process(target=os.system, args=(f'echo $USER',))
+            process.start()
+            process.join()
+        else:
+            print(f"File {full_path} does not exist.")
+
+
 if __name__ == '__main__':
     # run_processes()
-    run_processes_with_lock()
+    # run_processes_with_lock()
+    run_external_file('subProcess.py')
 

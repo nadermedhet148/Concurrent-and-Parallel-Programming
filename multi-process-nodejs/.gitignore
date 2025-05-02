@@ -1,0 +1,36 @@
+# Compiled source files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python specific files
+__pycache__/
+*.py[cod]
+
+# Node.js specific files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Java specific files
+target/
+build/
+
+# Environment variables
+.env
