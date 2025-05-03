@@ -10,9 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
 
-/**
- * An EventLoop that can dispatch events and
- */
+
 @Log
 @Getter
 @Setter

@@ -18,11 +18,9 @@ def calculate(func, args):
 
 
 def mul(a, b):
-    time.sleep(0.5*random.random())
     return a * b
 
 def plus(a, b):
-    time.sleep(0.5*random.random())
     return a + b
 
 
@@ -62,5 +60,4 @@ def test():
 
 
 if __name__ == '__main__':
-    freeze_support()
     test()

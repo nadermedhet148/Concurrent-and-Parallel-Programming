@@ -61,30 +61,16 @@ public class AbstractEvent<D> implements Comparable<AbstractEvent<?>> {
         return getCallbacks().remove(callback);
     }
 
-    /**
-     * Completes all registered callbacks.
-     *
-     * @param data
-     *          The data to pass back to the callbacks
-     */
     public void complete(D data) {
         getCallbacks().forEach(c -> c.complete(data));
     }
 
-    /**
-     * Completes all registered callbacks without data.
-     * -> Should only be used when using AbstractEvent<Void>
-     */
+
     public void complete() {
         getCallbacks().forEach(c -> c.complete(null));
     }
 
-    /**
-     * Excepts all registered callbacks.
-     *
-     * @param throwable
-     *          The reason why except was called
-     */
+
     public void except(Throwable throwable) {
         getCallbacks().forEach(c -> c.completeExceptionally(throwable));
     }
@@ -93,14 +79,7 @@ public class AbstractEvent<D> implements Comparable<AbstractEvent<?>> {
         this.canceled = true;
     }
 
-    /**
-     * Compares this abstractEvent to another by their priorities.
-     * This is used by the abstractEvent loop queue to prioritize different events.
-     *
-     * @param abstractEvent
-     *          The abstractEvent to compare itself with
-     * @return
-     */
+
     @Override
     public int compareTo(AbstractEvent abstractEvent) {
         return Integer.compare(abstractEvent.getPriority(), getPriority());

@@ -7,9 +7,7 @@ import lombok.extern.java.Log;
 
 import java.util.function.Consumer;
 
-/**
- * Gets started from the DispatcherThread class. It handles a dequeued abstractEvent.
- */
+
 @Log
 @Getter
 public class ExecutorThread <D> implements Runnable {

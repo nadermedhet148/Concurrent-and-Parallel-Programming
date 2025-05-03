@@ -29,7 +29,7 @@ if __name__ == "__main__":
         # Measure the end time
         end_time = time.time()
 
-        print(f"Time taken: {end_time - start_time} seconds")
+        print(f"Time taken in parallel_sum: {end_time - start_time} seconds")
 
     def threaded_sum(total_range, num_threads):
         """Calculate the sum of a range using threading."""
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         # Measure the end time
         end_time = time.time()
 
-        print(f"Time taken: {end_time - start_time} seconds")
+        print(f"Time taken in threaded_sum: {end_time - start_time} seconds")
 
     # Call the method
     parallel_sum(total_range=15**8, num_processes=20)

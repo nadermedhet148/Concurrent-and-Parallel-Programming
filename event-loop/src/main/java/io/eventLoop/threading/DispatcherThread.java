@@ -5,9 +5,6 @@ import io.eventLoop.events.AbstractEvent;
 import lombok.Getter;
 import lombok.extern.java.Log;
 
-/**
- * The dispatcher thread takes items from the eventQueue and dispatches a new executor task.
- */
 @Log
 @Getter
 public class DispatcherThread implements Runnable {
