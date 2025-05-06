@@ -22,8 +22,8 @@ public class HttpResponse {
 
 	byte[] body;
 
-	public HttpResponse(HttpRequest req) throws IOException {
-
+	public HttpResponse(HttpRequest req) throws IOException, InterruptedException {
+		Thread.sleep(200);
 		switch (req.method) {
 			case HEAD:
 				fillHeaders(Status._200);
@@ -35,17 +35,13 @@ public class HttpResponse {
 					    fillHeaders(Status._200);
 					    
 						headers.add(ContentType.HTML.toString());
-						StringBuilder result = new StringBuilder("<html><head><title>Index of ");
+						StringBuilder result = new StringBuilder("<html><head><title>Index of test");
 						result.append(req.uri);
-						result.append("</title></head><body><h1>Index of ");
+						result.append("</title></head><body><h1>Index of test ");
 						result.append(req.uri);
 						result.append("</h1><hr><pre>");
 
 						// TODO add Parent Directory
-						File[] files = file.listFiles();
-						for (File subfile : files) {
-							result.append(" <a href=\"" + subfile.getPath() + "\">" + subfile.getPath() + "</a>\n");
-						}
 						result.append("<hr></pre></body></html>");
 						fillResponse(result.toString());
 					} else if (file.exists()) {
